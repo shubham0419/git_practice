@@ -4,17 +4,17 @@ function mergeSort(arr) {
     return arr;
   }
 
-  // Divide: find the middledle point
-  const middle = Math.floor(arr.length / 2);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle);
+  // Divide: find the middle point
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
 
   // Conquer: recursively sort both halves
-  const sortedLt = mergeSort(left);
+  const sortedLeft = mergeSort(left);
   const sortedRight = mergeSort(right);
 
   // Combine: merge the sorted halves
-  return merge(sortedLt, sortedRight);
+  return merge(sortedLeft, sortedRight);
 }
 
 function merge(left, right) {
